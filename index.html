@@ -1,58 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pin Generator</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="container">
         <div class="row">
             <div class="col-md-6">
                 <div class="pin-generator half-width">
-                    <input class="form-control" type="text">
-                    <button class="generate-btn">Generate Pin</button>
+                    <input style="text-align: right;" id="text-area" class="form-control" value="" type="text" maxlength="10">
+                    <button onclick="generateBtn()" class="generate-btn">Generate Pin</button>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="input-section half-width">
-                    <input class="form-control" type="text">
+                    <input style="text-align: right;" id="inpt" class="form-control" value=""  type="text">
                     <div class="numbers">
                         <div class="calc-body">
                             <div class="calc-button-row">
-                              <div class="button">7</div>
-                              <div class="button">8</div>
-                              <div class="button">9</div>
+                                <div class="button" onclick="insertButton(7);">7</div>
+                                <div class="button" onclick="insertButton(8);">8</div>
+                                <div class="button" onclick="insertButton(9);">9</div>
                             </div>
                             <div class="calc-button-row">
-                              <div class="button">4</div>
-                              <div class="button">5</div>
-                              <div class="button">6</div>
+                                <div class="button" onclick="insertButton(4);">4</div>
+                                <div class="button" onclick="insertButton(5);">5</div>
+                                <div class="button" onclick="insertButton(6);">6</div>
                             </div>
                             <div class="calc-button-row">
-                              <div class="button">1</div>
-                              <div class="button">2</div>
-                              <div class="button">3</div>
+                                <div class="button" onclick="insertButton(1);">1</div>
+                                <div class="button" onclick="insertButton(2);">2</div>
+                                <div class="button" onclick="insertButton(3);">3</div>
                             </div>
                             <div class="calc-button-row">
-                                <div class="button"><</div>
-                                <div class="button">0</div>
-                                <div class="button">C</div>
+                                <div class="button" onclick="deleteButton( '<');">
+                                    < </div>
+                                        <div class="button" onclick="insertButton(0)">0</div>
+                                        <div class="button" onclick="clearBtn()">C</div>
+                                </div>
+                                <div>
+                                    <button onclick="submitBtn()" type="submit" class="submit-btn">Submit</button>
+                                    <p class="action-left">3 try left</p>
+                                </div>
                             </div>
-                            <div>
-                                <button type="submit" class="submit-btn">Submit</button>
-                                <p class="action-left">3 try left</p>
-                            </div>
+                        </div>
                     </div>
                 </div>
+                <div id="hide" class="notify-section">
+                    <p id="notMatch" class="notify">❌ Pin Didn't Match, Please try again</p>
+                    <p id="pinMatched" class="notify">✅ Pin Matched... Secret door is opening for you</p>
+                </div>
             </div>
-        </div>
-        <div class="notify-section">
-            <p class="notify">❌ Pin Didn't Match, Please try again</p>
-            <p class="notify">✅ Pin Matched... Secret door is opening for you</p>
-        </div>
-    </div>
+
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="index.js"></script>
+
 </body>
+
 </html>
