@@ -1,5 +1,8 @@
-var hide = document.getElementById("hide");
+var hide = document.getElementById("notMatch");
 hide.style.display = "none";
+
+var notHide = document.getElementById("pinMatched");
+notHide.style.display = "none";
 
 
 function generateBtn() {
